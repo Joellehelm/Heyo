@@ -1,0 +1,2690 @@
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-05-07 21:25:48.938748', '2026-05-07 21:25:48.938751') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20250101000000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" text DEFAULT '' NOT NULL, "color" varchar DEFAULT 'banana' NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2026-05-07 21:25:48.958647', '2026-05-07 21:25:48.958649') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20250101000000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" text DEFAULT '' NOT NULL, "color" varchar DEFAULT 'banana' NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tiny victory"], ["body", "Make one adorable sticky note ✨"], ["color", "banana"], ["created_at", "2026-05-07 21:25:48.998214"], ["updated_at", "2026-05-07 21:25:48.998214"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.1ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Snack quest"], ["body", "Find cookies for the coding goblin 🍪"], ["color", "bubblegum"], ["created_at", "2026-05-07 21:25:49.002898"], ["updated_at", "2026-05-07 21:25:49.002898"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cozy idea"], ["body", "Add more stickers, stars, and happy wiggles."], ["color", "mint"], ["created_at", "2026-05-07 21:25:49.005912"], ["updated_at", "2026-05-07 21:25:49.005912"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:25:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 381)
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 6326)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:25:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:03 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:06 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:17 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:38 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:26:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:44 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:48 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:27:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:28:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:28:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:28:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:28:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:28:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:22 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:37:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:21 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:27 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:38:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 21:39:33 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 14.7ms | ActiveRecord: 2.2ms | Allocations: 13975)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 21:39:34 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 758)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 21:39:34 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:39:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:34 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:40:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:06 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:41 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:41:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:17 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:38 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:42:57 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:27 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:34 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:44 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:43:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:44:08 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:43 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:48 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:53:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 21:54:33 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (1.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 1044)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 21:54:33 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:44 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:54:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:38 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:55:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:56:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:56:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:56:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 21:56:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:03:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:03:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:04:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:05:57 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:08 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:06:17 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 1043)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:06:17 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:06:17 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:21 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:34 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:06:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:24:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:25:44 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: -0.8ms | ActiveRecord: 7.5ms | Allocations: 1043)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:25:44 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:25:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 31)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:25:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:25:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:25:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:26:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:31:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:31:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:31:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:21 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:44 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:32:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:17 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:38 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:33:57 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:12 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:22 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:24 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:43 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:34:57 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:19 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:43 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:35:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:36:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:36:03 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:36:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: 3000-itkvuvz3904zawv4bbhvw.e2b.app
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: 3000-itkvuvz3904zawv4bbhvw.e2b.app
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-07 22:39:21 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 1041)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:39:24 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: 3000-itkvuvz3904zawv4bbhvw.e2b.app
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: 3000-itkvuvz3904zawv4bbhvw.e2b.app
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:41 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:43 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:40:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:06 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:08 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:13 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:15 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:18 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:22 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:24 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:27 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:42 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:41:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:18 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:21 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:22 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:36 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:43 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:48 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:42:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:04 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:13 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:18 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:29 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:43:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:08 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:11 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:17 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:34 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:41 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:55 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:44:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:01 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:07 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:17 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:39 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:44 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:48 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:53 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:45:58 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:02 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:09 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:12 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:22 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:26 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:30 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:38 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:50 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:51 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:46:59 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:03 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:06 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:13 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:18 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:20 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:28 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:35 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:40 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:52 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:47:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:00 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:03 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:06 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:10 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:13 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:16 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:18 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:25 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:28 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-07 22:48:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/4293-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+

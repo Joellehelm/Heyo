@@ -1,6 +1,6 @@
 # Heyo
 
-A really, really fun and really, really cute sticky note app with a Ruby on Rails API backend and a React frontend.
+A fun, colorful sticky note app with a Ruby on Rails API backend and a React frontend.
 
 ## Features
 
@@ -8,7 +8,7 @@ A really, really fun and really, really cute sticky note app with a Ruby on Rail
 - Name each note
 - Edit note title, body, and color
 - Delete notes
-- Cute colors, playful animations, and a happy little board
+- Premium colors, playful motion, and a polished idea board
 
 ## Stack
 

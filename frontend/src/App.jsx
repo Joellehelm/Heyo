@@ -8,16 +8,16 @@ function App() {
   const [form, setForm] = useState(NEW_NOTE)
   const [editingId, setEditingId] = useState(null)
   const [drafts, setDrafts] = useState({})
-  const [message, setMessage] = useState('Loading your cutie notes...')
+  const [message, setMessage] = useState('Loading your notes...')
 
   useEffect(() => {
     fetchNotes()
   }, [])
 
   const noteCountLabel = useMemo(() => {
-    if (notes.length === 0) return 'No notes yet — make a tiny masterpiece!'
-    if (notes.length === 1) return '1 little note is twinkling on your board.'
-    return `${notes.length} cheerful notes are twinkling on your board.`
+    if (notes.length === 0) return 'No notes yet — capture your first bright idea.'
+    if (notes.length === 1) return '1 note is ready on your board.'
+    return `${notes.length} notes are ready on your board.`
   }, [notes.length])
 
   async function fetchNotes() {
@@ -26,16 +26,16 @@ function App() {
       if (!response.ok) throw new Error('Could not load notes')
       const data = await response.json()
       setNotes(data)
-      setMessage('Ready for sparkly ideas!')
+      setMessage('Ready for your next idea.')
     } catch {
-      setMessage('Start the Rails API to save notes. You can still admire the cuteness!')
+      setMessage('Start the Rails API to save notes. Your board is ready when you are.')
     }
   }
 
   async function createNote(event) {
     event.preventDefault()
     const payload = {
-      title: form.title.trim() || 'Untitled sparkle',
+      title: form.title.trim() || 'Untitled idea',
       body: form.body,
       color: form.color
     }
@@ -50,9 +50,9 @@ function App() {
       const note = await response.json()
       setNotes([note, ...notes])
       setForm(NEW_NOTE)
-      setMessage('Boop! A new sticky friend appeared.')
+      setMessage('New note added to your board.')
     } catch {
-      setMessage('Oopsie! Could not save that note yet.')
+      setMessage('Could not save that note yet. Please try again.')
     }
   }
 
@@ -67,15 +67,15 @@ function App() {
       const response = await fetch(`/api/notes/${noteId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ note: { ...draft, title: draft.title.trim() || 'Untitled sparkle' } })
+        body: JSON.stringify({ note: { ...draft, title: draft.title.trim() || 'Untitled idea' } })
       })
       if (!response.ok) throw new Error('Could not update note')
       const updated = await response.json()
       setNotes(notes.map((note) => (note.id === noteId ? updated : note)))
       setEditingId(null)
-      setMessage('Saved with a sprinkle of stardust!')
+      setMessage('Note updated successfully.')
     } catch {
-      setMessage('Eek! That edit did not stick.')
+      setMessage('That edit did not save. Please try again.')
     }
   }
 
@@ -84,9 +84,9 @@ function App() {
       const response = await fetch(`/api/notes/${noteId}`, { method: 'DELETE' })
       if (!response.ok) throw new Error('Could not delete note')
       setNotes(notes.filter((note) => note.id !== noteId))
-      setMessage('Poof! Note floated away.')
+      setMessage('Note removed from your board.')
     } catch {
-      setMessage('That note is being stubborn and stayed put.')
+      setMessage('That note could not be deleted yet.')
     }
   }
 
@@ -101,29 +101,33 @@ function App() {
     <main className="app-shell">
       <section className="hero">
         <div>
-          <p className="eyebrow">🌈 Heyo, cutie planner!</p>
-          <h1>Sticky notes for tiny quests and giant dreams</h1>
+          <p className="eyebrow">Colorful notes. Clear momentum.</p>
+          <h1>Premium sticky notes for bold ideas</h1>
           <p>{noteCountLabel}</p>
         </div>
-        <div className="mascot" aria-hidden="true">🐰</div>
+        <div className="brand-orb" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </section>
 
       <form className="creator-card" onSubmit={createNote}>
-        <h2>Make a new sticky friend</h2>
+        <h2>Create a new note</h2>
         <label>
-          Name it
-          <input value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} placeholder="Picnic plans" />
+          Title
+          <input value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} placeholder="Project launch" />
         </label>
         <label>
-          Note magic
-          <textarea value={form.body} onChange={(event) => setForm({ ...form, body: event.target.value })} placeholder="Write a sweet reminder..." />
+          Details
+          <textarea value={form.body} onChange={(event) => setForm({ ...form, body: event.target.value })} placeholder="Add the reminder, plan, or idea..." />
         </label>
         <div className="color-row">
           {COLORS.map((color) => (
             <button key={color} type="button" className={`swatch ${color} ${form.color === color ? 'selected' : ''}`} onClick={() => setForm({ ...form, color })} aria-label={`Choose ${color}`} />
           ))}
         </div>
-        <button className="primary-button" type="submit">Add sticky ✨</button>
+        <button className="primary-button" type="submit">Add note</button>
       </form>
 
       <p className="status">{message}</p>
@@ -151,7 +155,7 @@ function App() {
               ) : (
                 <>
                   <h3>{note.title}</h3>
-                  <p>{note.body || 'A mysterious blank note. Very chic.'}</p>
+                  <p>{note.body || 'A blank note with plenty of potential.'}</p>
                   <div className="note-actions">
                     <button onClick={() => beginEdit(note)}>Edit</button>
                     <button onClick={() => deleteNote(note.id)}>Delete</button>
