@@ -1,0 +1,239 @@
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-05-18 19:41:59.555947', '2026-05-18 19:41:59.555953') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20250101000000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" text DEFAULT '' NOT NULL, "color" varchar DEFAULT 'banana' NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2026-05-18 19:41:59.582257', '2026-05-18 19:41:59.582263') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20250101000000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" text DEFAULT '' NOT NULL, "color" varchar DEFAULT 'banana' NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.8ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tiny victory"], ["body", "Make one adorable sticky note ✨"], ["color", "banana"], ["created_at", "2026-05-18 19:41:59.650394"], ["updated_at", "2026-05-18 19:41:59.650394"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.6ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Snack quest"], ["body", "Find cookies for the coding goblin 🍪"], ["color", "bubblegum"], ["created_at", "2026-05-18 19:41:59.658035"], ["updated_at", "2026-05-18 19:41:59.658035"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.5ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cozy idea"], ["body", "Add more stickers, stars, and happy wiggles."], ["color", "mint"], ["created_at", "2026-05-18 19:41:59.662994"], ["updated_at", "2026-05-18 19:41:59.662994"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2026-05-18 19:42:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 381)
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 6326)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:42:50 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 8.4ms | ActiveRecord: 1.3ms | Allocations: 13968)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:42:50 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 758)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 19:42:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:42:55 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:42:55 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 19:44:12 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:44:13 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:44:14 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:44:21 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:44:29 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 758)
+
+
+Started GET "/api/notes" for 127.0.0.1 at 2026-05-18 19:44:29 +0000
+Processing by Api::NotesController#index as */*
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+  ↳ app/controllers/api/notes_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 757)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2026-05-18 19:57:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 381)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3467)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:03:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:07:32 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:07:56 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:12:23 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:17:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:39:31 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:48:34 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:48:46 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:57:33 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:57:45 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:57:49 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:57:54 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 13)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 20:57:57 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 21:04:14 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 21:11:05 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-18 21:17:21 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /tmp/tapdev-bundle/8913-3000/ruby/3.2.0/gems/railties-7.1.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+

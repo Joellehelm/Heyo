@@ -41,10 +41,10 @@ The app runs on `http://localhost:5173` and proxies `/api` requests to the Rails
 
 ## API endpoints
 
-- `GET /api/notes` — list notes
-- `POST /api/notes` — create a note
-- `PATCH /api/notes/:id` — update a note
-- `DELETE /api/notes/:id` — delete a note
+- `GET /api/notes` ??? list notes
+- `POST /api/notes` ??? create a note
+- `PATCH /api/notes/:id` ??? update a note
+- `DELETE /api/notes/:id` ??? delete a note
 
 ## Note colors
 
